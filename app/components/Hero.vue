@@ -48,7 +48,7 @@
 
       <div class="flex gap-4 mt-4">
         <NuxtLink :to="{name: 'projects'}">
-          <button class="px-4 py-2 rounded-full bg-emerald-950 text-emerald-400 font-bold cursor-pointer">
+          <button class="px-4 py-2 rounded-full bg-emerald-800 text-emerald-400 font-bold cursor-pointer">
             View projects
           </button>
         </NuxtLink>
@@ -57,7 +57,7 @@
 
     <div class="lg:ml-20">
       <img
-        class="animate-gradient-border w-64 h-64 p-1 rounded-full ring-2"
+        class="animate-gradient-border w-64 h-64 p-1 rounded-full"
         src="/my-image.jpg"
         alt="my image avatar"
         loading="lazy"
