@@ -9,5 +9,11 @@ useHead({
 </script>
 
 <template>
-    <h1 class="text-3xl font-bold text-center mt-8 text-black dark:text-white">Projects</h1>
+    <section class="px-6 mx-auto max-w-7xl mt-16 lg:mt-32 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+        </div>
+    </section>
 </template>
