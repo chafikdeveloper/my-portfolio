@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Midwink",
+        "slug": "midwink",
+        "description": "A web-based email platform inspired by Gmail, featuring AI features",
+        "tags": ["Web Apps", "AI", "Payment"],
+        "link": "",
+        "cover": "/project-cover.jpg"
+    },
+    {
+        "id": 2,
+        "title": "SNRV",
+        "slug": "snrv",
+        "description": "a showcase website for SNRV",
+        "tags": ["Website", "CMS", "Admin Panel"],
+        "link": "",
+        "cover": "/project-cover.jpg"
+    },
+    {
+        "id": 3,
+        "title": "SpecBuilder",
+        "slug": "specbuilder",
+        "description": "SpecBuilder is a form website for TiniTec's potential clients based on the service they choose",
+        "tags": ["Website", "CRUD"],
+        "link": "",
+        "cover": "/project-cover.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Tinitec Admin",
+        "slug": "tinitec-admin",
+        "description": "a simple HR ERP built for TiniTec",
+        "tags": ["Website", "ERP"],
+        "link": "",
+        "cover": "/project-cover.jpg"
+    }
+]

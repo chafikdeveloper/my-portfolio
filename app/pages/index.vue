@@ -22,9 +22,7 @@ useHead({
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      <ProjectCard :limit="3" />
     </div>
 
     <div class="flex justify-center mt-8">
