@@ -14,10 +14,35 @@ const isOpen = ref<boolean>(false);
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
+
+const path = useRoute();
+
+const navLinks = computed(() => [
+  {
+    name: "Home",
+    link: "home",
+    active: path.name === "home",
+  },
+  {
+    name: "About",
+    link: "about",
+    active: path.name === "about",
+  },
+  {
+    name: "Projects",
+    link: "projects",
+    active: path.name === "projects",
+  },
+  {
+    name: "Contact",
+    link: "contact",
+    active: path.name === "contact",
+  },
+]);
 </script>
 
 <template>
-  <header class="p-4">
+  <header class="py-4 px-6">
     <div class="flex items-center justify-between mx-auto max-w-7xl">
       <h1 class="text-2xl font-bold text-black dark:text-white">
         Chafik
@@ -67,18 +92,16 @@ const toggleMenu = () => {
       </button>
 
       <nav class="hidden lg:flex items-center gap-8">
-        <ul class="flex items-center gap-4 text-black dark:text-white">
-          <li>
-            <NuxtLink to="/">Home</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/about">About</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/projects">Projects</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/contact">Contact</NuxtLink>
+        <ul
+          v-for="(link, index) in navLinks"
+          :key="index"
+          class="flex items-center gap-4 text-black dark:text-white"
+        >
+          <li
+            class="hover:text-blue-500"
+            :class="{ 'text-green-600! border-b font-bold': link.active }"
+          >
+            <NuxtLink :to="{ name: link.link }">{{ link.name }}</NuxtLink>
           </li>
         </ul>
         <button @click="toggleColorMode" class="text-black dark:text-white">
@@ -129,18 +152,15 @@ const toggleMenu = () => {
       id="mobile-menu-links"
       class="lg:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700 mt-4"
     >
-      <ul class="flex flex-col gap-4 text-black dark:text-white">
-        <li>
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/about">About</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/projects">Projects</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/contact">Contact</NuxtLink>
+      <ul 
+        v-for="(link, index) in navLinks" :key="index"
+        class="flex flex-col gap-4 text-black dark:text-white"
+      >
+        <li
+          class="hover:text-blue-500"
+          :class="{ 'inline text-green-600! font-bold': link.active }"
+        >
+          <NuxtLink :to="{ name: link.link }">{{ link.name }}</NuxtLink>
         </li>
       </ul>
       <button @click="toggleColorMode" class="text-black dark:text-white mt-2">

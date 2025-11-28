@@ -1,5 +1,11 @@
 <script setup lang='ts'>
+definePageMeta({
+    name: 'projects'
+})
 
+useHead({
+    title: 'Chafik Chegma | Projects'
+})
 </script>
 
 <template>
