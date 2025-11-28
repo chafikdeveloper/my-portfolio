@@ -2,7 +2,7 @@
 
 <template>
     <!-- //TODO: uncomment this when you finish -->
-  <!-- <SplashCursor
+  <UiSplashCursor
     :SIM_RESOLUTION="128"
     :DYE_RESOLUTION="1440"
     :CAPTURE_RESOLUTION="512"
@@ -17,7 +17,7 @@
     :COLOR_UPDATE_SPEED="10"
     :BACK_COLOR="{ r: 0.5, g: 0, b: 0 }"
     :TRANSPARENT="true"
-  /> -->
+  />
   <Navbar />
 
   <main class="container mx-auto max-w-7xl">
