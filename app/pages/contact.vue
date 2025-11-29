@@ -6,6 +6,13 @@ definePageMeta({
 useHead({
     title: 'Chafik Chegma | Contact'
 })
+
+const email = process.env.EMAIL
+const phone = process.env.PHONE
+
+const linkedin = process.env.LINKEDIN_LINK
+const instagram = process.env.INSTAGRAM_LINK
+const github = process.env.GITHUB_LINK
 </script>
 
 <template>
@@ -21,13 +28,17 @@ useHead({
                 <div>
                     <h5 class="mb-4 text-white!">Contact me</h5>
                     <div class="flex flex-col space-y-4">
-                        <div class="flex items-center gap-4">
-                            <Icon name="mdi:email" class="text-white hover:text-green-500" size="24" />
-                            <NuxtLink to="mailto:chafikdevelopper@gmail.com" class="text-white">chafikdevelopper@gmail.com</NuxtLink>
+                        <div>
+                            <NuxtLink :to="`mailto:${email}`" class="flex items-center gap-4">
+                                <Icon name="mdi:email" class="text-white hover:text-emerald-500" size="24" />
+                                <p class="text-black dark:text-white">{{ email }}</p>
+                            </NuxtLink>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <Icon name="mdi:whatsapp" class="text-white hover:text-green-500" size="24" />
-                            <NuxtLink to="https://wa.me/+213781460308" target="_blank" class="text-white">+213 781 46 03 08</NuxtLink>
+                        <div>
+                            <NuxtLink :to="`https://wa.me/${phone}`" target="_blank" class="flex items-center gap-4">
+                                <Icon name="mdi:whatsapp" class="text-white hover:text-green-500" size="24" />
+                                <p class="text-black dark:text-white">{{ phone }}</p>
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -35,13 +46,13 @@ useHead({
                 <div>
                     <h5 class="mb-4 text-white!">Connect with me</h5>
                     <div class="flex items-center gap-4">
-                        <NuxtLink to="">
+                        <NuxtLink :to="linkedin" target="_blank">
                             <Icon name="mdi:linkedin" class="text-white cursor-pointer hover:text-green-500" size="28" />
                         </NuxtLink>
-                        <NuxtLink to="">
+                        <NuxtLink :to="instagram" target="_blank">
                             <Icon name="mdi:instagram" class="text-white cursor-pointer hover:text-green-500" size="28" />
                         </NuxtLink>
-                        <NuxtLink to="">
+                        <NuxtLink :to="github" target="_blank">
                             <Icon name="mdi:github" class="text-white cursor-pointer hover:text-green-500" size="28" />
                         </NuxtLink>
                     </div>
