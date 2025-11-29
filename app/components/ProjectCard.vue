@@ -29,7 +29,7 @@ if (props.limit) {
   <div v-for="item in data" :key="item.id"
     class="bg-gray-900 block max-w-sm p-6  rounded-lg shadow-xs"
   >
-    <NuxtLink :to="`projects/${item.slug}`">
+    <NuxtLink>
       <img class="rounded-sm object-cover h-fit w-full" :src="item.cover" :alt="item.title" />
     </NuxtLink>
 
@@ -44,7 +44,7 @@ if (props.limit) {
       </dev>
     </div>
 
-    <NuxtLink :to="`projects/${item.slug}`">
+    <NuxtLink>
       <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading text-white!">
         {{ item.title }}
       </h5>

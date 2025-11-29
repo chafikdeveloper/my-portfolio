@@ -31,13 +31,13 @@ const github = process.env.GITHUB_LINK
                         <div>
                             <NuxtLink :to="`mailto:${email}`" class="flex items-center gap-4">
                                 <Icon name="mdi:email" class="text-white hover:text-emerald-500" size="24" />
-                                <p class="dark:text-white">{{ email }}</p>
+                                <p class="text-white">{{ email }}</p>
                             </NuxtLink>
                         </div>
                         <div>
                             <NuxtLink :to="`https://wa.me/${phone}`" target="_blank" class="flex items-center gap-4">
                                 <Icon name="mdi:whatsapp" class="text-white hover:text-green-500" size="24" />
-                                <p class="dark:text-white">{{ phone }}</p>
+                                <p class="text-white">{{ phone }}</p>
                             </NuxtLink>
                         </div>
                     </div>
