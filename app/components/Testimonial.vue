@@ -1,10 +1,10 @@
-<script setup lang="ts">
-const data = await $fetch('/api/testimonials');
+<script setup>
+const testimonials = await $fetch('/api/testimonials');
 </script>
 
 <template>
   
-    <article v-for="item in data" :key="item.id"
+    <article v-for="item in testimonials" :key="item.id"
       class="break-inside-avoid flex flex-col p-4 border-2 rounded-md shadow-md bg-gray-900"
     >
       <div>

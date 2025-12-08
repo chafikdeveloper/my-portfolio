@@ -1,57 +1,42 @@
 <script setup lang="ts">
-interface Project {
-  id: number,
-  title: string,
-  slug: string,
-  description: string,
-  tags: string[],
-  link: string,
-  cover: string
-};
+import type { PropType } from 'vue';
+import type { Project } from '../../server/types/Project'
 
-const projects = await $fetch('/api/projects');
-
-const props = defineProps({
-  limit: Number
+defineProps({
+  project: {
+    type: Object as PropType<Project>,
+    required: true
+  }
 })
-
-let data = <Project[]>[];
-
-if (props.limit) {
-  data = projects.slice(0, props.limit);
-} else {
-  data = projects;
-}
-
 </script>
 
 <template>
-  <div v-for="item in data" :key="item.id"
+  <div
     class="bg-gray-900 block max-w-sm p-6  rounded-lg shadow-xs"
   >
     <NuxtLink>
-      <img class="rounded-sm object-cover h-fit w-full" :src="item.cover" :alt="item.title" />
+      <img class="rounded-sm object-cover h-fit w-full" :src="project.thumbnail.url" :alt="project.title" />
     </NuxtLink>
 
-    <div class="flex gap-2 items-center mt-4">
-      <dev>
+    <div class="flex gap-2 items-center mt-4" >
+      <div v-for="tag in project.tags" :key="tag">
         <span
-          v-for="tag in item.tags" :key="tag"
+          
           class="bg-indigo-950 text-blue-300 text-xs font-medium px-1.5 py-0.5 rounded-full"
         >
           {{ tag }}
         </span>
-      </dev>
+      </div>
     </div>
 
     <NuxtLink>
       <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading text-white!">
-        {{ item.title }}
+        {{ project.title }}
       </h5>
     </NuxtLink>
     
-    <p class="mb-6 text-body line-clamp-2 text-white!">
-      {{ item.description }}
+    <p class="mb-6 text-body line-clamp-2 min-h-12 text-white!">
+      {{ project.description }}
     </p>
   </div>
 </template>
