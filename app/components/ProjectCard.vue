@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import type { Project } from '../../server/types/Project'
+import type { Projects } from '../../server/types/Projects'
 
 defineProps({
   project: {
-    type: Object as PropType<Project>,
+    type: Object as PropType<Projects>,
     required: true
   }
 })
@@ -14,7 +14,7 @@ defineProps({
   <div
     class="bg-gray-900 block max-w-sm p-6  rounded-lg shadow-xs"
   >
-    <NuxtLink>
+    <NuxtLink :to="`projects/${project.slug}`">
       <img class="rounded-sm object-cover h-fit w-full" :src="project.thumbnail.url" :alt="project.title" />
     </NuxtLink>
 
@@ -29,7 +29,7 @@ defineProps({
       </div>
     </div>
 
-    <NuxtLink>
+    <NuxtLink :to="`projects/${project.slug}`">
       <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading text-white!">
         {{ project.title }}
       </h5>

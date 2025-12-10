@@ -4,9 +4,26 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  modules: ['@nuxtjs/color-mode', '@nuxt/icon'],
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()]
   },
-  modules: ['@nuxtjs/color-mode', '@nuxt/icon'],
+  routeRules: {
+    '/about': {
+      prerender: true
+    },
+    '/contact': {
+      prerender: true
+    },
+    '/': {
+      isr: 604800
+    },
+    '/projects': {
+      isr: true
+    },
+    '/projects/**': {
+      isr: true
+    },
+  }
 })

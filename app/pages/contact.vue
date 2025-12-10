@@ -7,9 +7,6 @@ useHead({
     title: 'Chafik Chegma | Contact'
 })
 
-const email = process.env.EMAIL
-const phone = process.env.PHONE
-
 const linkedin = process.env.LINKEDIN_LINK
 const instagram = process.env.INSTAGRAM_LINK
 const github = process.env.GITHUB_LINK
@@ -29,15 +26,15 @@ const github = process.env.GITHUB_LINK
                     <h5 class="mb-4 text-white!">Contact me</h5>
                     <div class="flex flex-col space-y-4">
                         <div>
-                            <NuxtLink :to="`mailto:${email}`" class="flex items-center gap-4">
+                            <NuxtLink to="mailto:chafikdevelopper@gmail.com" class="flex items-center gap-4">
                                 <Icon name="mdi:email" class="text-white hover:text-emerald-500" size="24" />
-                                <p class="text-white">{{ email }}</p>
+                                <p class="text-white">chafikdevelopper@gmail.com</p>
                             </NuxtLink>
                         </div>
                         <div>
-                            <NuxtLink :to="`https://wa.me/${phone}`" target="_blank" class="flex items-center gap-4">
+                            <NuxtLink to="https://wa.me/+213781460308" target="_blank" class="flex items-center gap-4">
                                 <Icon name="mdi:whatsapp" class="text-white hover:text-green-500" size="24" />
-                                <p class="text-white">{{ phone }}</p>
+                                <p class="text-white">+213 781 46 03 08</p>
                             </NuxtLink>
                         </div>
                     </div>
