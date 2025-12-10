@@ -98,7 +98,7 @@ useHead({
       <button
         class="px-4 py-2 rounded-md bg-emerald-600 dark:bg-emerald-800 text-emerald-200 dark:text-emerald-400 font-bold cursor-pointer"
       >
-        <NuxtLink to="/cv-chafik-chegma.pdf" target="_blank"
+        <NuxtLink to="/my_cv.pdf" target="_blank"
           >Download my Resume (CV)</NuxtLink
         >
       </button>
