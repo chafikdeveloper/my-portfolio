@@ -31,7 +31,7 @@ const navLinks = computed(() => [
   {
     name: "Projects",
     link: "projects",
-    active: path.name === "projects",
+    active: path.path.startsWith('/projects'),
   },
   {
     name: "Contact",
@@ -44,10 +44,12 @@ const navLinks = computed(() => [
 <template>
   <header class="py-4 px-6">
     <div class="flex items-center justify-between mx-auto max-w-7xl">
-      <h1 class="text-2xl font-bold text-black dark:text-white">
-        Chafik
-        <span class="text-blue-800">Dev</span>
-      </h1>
+      <NuxtLink to="/" class="cursor-pointer">
+        <h1 class="text-2xl font-bold text-black dark:text-white">
+          Chafik
+          <span class="text-blue-800">Dev</span>
+        </h1>
+      </NuxtLink>
 
       <button
         class="cursor-pointer lg:hidden focus:outline-none"
@@ -104,7 +106,7 @@ const navLinks = computed(() => [
             <NuxtLink :to="{ name: link.link }">{{ link.name }}</NuxtLink>
           </li>
         </ul>
-        <button @click="toggleColorMode" class="text-black dark:text-white">
+        <button @click="toggleColorMode" class="text-black dark:text-white cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

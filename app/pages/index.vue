@@ -21,9 +21,7 @@ useHead({
       <h4 class="text-center text-md font-light">View my latest projects</h4>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <ProjectCard :limit="3" />
-    </div>
+    <Project :limit="3" />
 
     <div class="flex justify-center mt-8">
       <NuxtLink :to="{ name: 'projects' }">
