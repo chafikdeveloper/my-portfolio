@@ -9,7 +9,11 @@ useHead({
     {
       name: "description",
       content:"Welcome to Chafik Chegma's portfolio. Explore my web development projects, learn about my skills, and discover how I create modern, responsive, and accessible websites."
-    }
+    }, 
+    {
+      name: "google-site-verification",
+      content: "DsjyBLwrSGBlJN5i9lJSDf_iBQ4d2giK_Q_QlqEMiHA"
+    },
   ]
 });
 </script>
