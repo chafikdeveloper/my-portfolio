@@ -18,8 +18,8 @@
       </h1>
 
       <UiShinyText
-        text="Full-Stack Developer"
-        class="text-4xl text-green-600 font-semibold"
+        text="Full Stack Developer"
+        class="text-4xl text-green-600 font-semibold text-center lg:text-left"
         :disabled="false"
         :speed="3"
       />
